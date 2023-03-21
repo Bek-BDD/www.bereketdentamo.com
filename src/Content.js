@@ -60,7 +60,7 @@ export const content = {
   hero: {
     title: "Full Stack Developer",
     firstName: "BEREKET",
-    LastName: "DENTAMO",
+    LastName: "Daniel",
     btnText: "Get My Resume",
     image: Hero_person,
     hero_content: [
