@@ -2,7 +2,7 @@
 name: Cicd Pipeline for portifolio
 on:
   push:
-    branches: [main]
+    branches: [master]
 jobs:
   build-and-deplopy:
     name: Build and Deploy
@@ -24,9 +24,10 @@ jobs:
           aws-secrete-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws-region: ${{env.REGION}}
 
-        - uses: actions/setup-node@v2
-          with:
-            node-version: '18'
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
 
       - name: Install Dependencies
         run: |
@@ -44,7 +45,4 @@ jobs:
         run: |
           aws cloudfront create-invalidation \
             -- distribution-id ${{env.DIST_ID}} \
-            --paths "/*" 
-
-
-         
+            --paths "/*"
