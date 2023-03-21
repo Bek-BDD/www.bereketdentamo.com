@@ -2,7 +2,7 @@
 name: Cicd Pipeline for portifolio
 on:
   push:
-    branches: [master]
+    branches: [main]
 jobs:
   build-and-deplopy:
     name: Build and Deploy
