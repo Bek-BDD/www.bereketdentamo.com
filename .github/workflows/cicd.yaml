@@ -35,6 +35,11 @@ jobs:
           npm ci --production
 
       - name: Build Static Website
+        run: |
+          npm install -g vite
+          vite build
+
+      - name: Build Static Website
         run: npm run build
 
       - name: Copy files to Production
