@@ -1,12 +1,13 @@
 // import images
 import Hero_person from "./assets/images/Hero/person.png";
+import Resume from "./assets/BEREKET_ DENTAMO _ Resume.pdf";
 
-import figma from "./assets/images/Skills/figma.png";
-import sketch from "./assets/images/Skills/sketch.png";
-import ps from "./assets/images/Skills/ps.png";
+import figma from "./assets/images/Skills/java.png";
+import sketch from "./assets/images/Skills/AWS.png";
+import ps from "./assets/images/Skills/node.png";
 import reactjs from "./assets/images/Skills/react.png";
-import nodejs from "./assets/images/Skills/node.png";
-import python from "./assets/images/Skills/python.png";
+import nodejs from "./assets/images/Skills/spring.png";
+import python from "./assets/images/Skills/sql.png";
 
 import services_logo1 from "./assets/images/Services/logo1.png";
 import services_logo2 from "./assets/images/Services/logo2.png";
@@ -19,12 +20,10 @@ import person_project from "./assets/images/projects/person.png";
 
 import avatar1 from "./assets/images/Testimonials/avatar1.png";
 import avatar2 from "./assets/images/Testimonials/avatar2.png";
-import avatar3 from "./assets/images/Testimonials/avatar3.png";
-import avatar4 from "./assets/images/Testimonials/avatar4.png";
 
 import Hireme_person from "./assets/images/Hireme/person.png";
 import Hireme_person2 from "./assets/images/Hireme/person2.png";
-
+import Flow_Chart from "./assets/images/Hireme/flowchart.png";
 // import icons from react-icons
 import { GrMail } from "react-icons/gr";
 import { MdArrowForward, MdCall } from "react-icons/md";
@@ -63,6 +62,7 @@ export const content = {
     LastName: "Daniel",
     btnText: "Get My Resume",
     image: Hero_person,
+    resume:Resume,
     hero_content: [
       {
         count: "5+",
@@ -82,6 +82,7 @@ export const content = {
         name: "Java",
         para: "Lorem ipsum text  dummy",
         logo: figma,
+        
       },
       {
         name: "Spring Boot",
@@ -138,15 +139,15 @@ export const content = {
     image: person_project,
     project_content: [
       {
-        title: "Gym Website",
+        title: "Croud Funding Site",
         image: project1,
       },
       {
-        title: "Social Media web",
+        title: "Property Managment Site",
         image: project2,
       },
       {
-        title: "Creative Website",
+        title: "It Company Website",
         image: project3,
       },
     ],
@@ -159,13 +160,15 @@ export const content = {
         review:
           "(In progress via distance education; expected completion December 2024)Maharishi International University, Fairfield, Iowa",
 
-        name: "MSc OF COMPUTER SCIENCE",
+        name: "MSc - COMPUTER SCIENCE",
+        img:avatar1
       },
       {
         review:
           "Completed Bachelors of Science in Electrical and Computer Engineering, Arbaminch University - Arbaminch, Ethiopia.",
 
-        name: "BSc ELECTRICAL AND COMPUTER ENGINEERING ",
+        name: "BSc - ELECTRICAL AND COMPUTER ENGINEERING ",
+        img:avatar2
       },
       {
         review: "Certified CISCO Network Associate,   ",
@@ -179,8 +182,10 @@ export const content = {
     subtitle: "AVAILABLE FOR FULL TIME W2 EMPLOYMENT",
     image1: Hireme_person,
     image2: Hireme_person2,
+    flow: Flow_Chart,
     para: "Full Stack Java developer, with demonstrated experience in developing Enterprise web Applications using cutting edge technologies and tools. ",
     btnText: "Hire Me",
+    btn2Text: "Go to Blog"
   },
   Contact: {
     title: "Contect Me",

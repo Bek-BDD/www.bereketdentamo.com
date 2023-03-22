@@ -50,16 +50,21 @@ const Skills = () => {
         </div>
         <br />
         <ul className="list-decimal px-4 font-Poppins sm:text-sm text-xs !leading-7">
-          <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
-          <li>Lorem ipsum dolor sit, ame.</li>
-          <li>Lorem ipsum dolor sit, amet consectetur</li>
           <li>
-            Lorem ipsum dolor sit, amet dolor sit, amet consectetur adipisicing.
+            Proficient in Java programming language, with 5
+            years of experience.
           </li>
           <li>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad est
-            beatae quos rem.
+            Extensive experience in designing, developing, and implementing
+            complex Java-based applications
           </li>
+          <li>
+            Skilled in writing efficient and optimized code, with a focus on
+            performance tuning and memory management.
+          </li>
+          <li>Strong understanding of software 
+            engineering and OOP Principles </li>
+          
         </ul>
         <br />
         <div className="flex justify-end">

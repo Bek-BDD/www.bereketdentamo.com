@@ -1,34 +1,41 @@
-import { createElement, useRef } from "react";
+import { createElement, useEffect, useRef, useState } from "react";
 import { content } from "../Content";
-import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
+
 
 const Contact = () => {
   const { Contact } = content;
-  const form = useRef();
+  
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const messageRef = useRef(null);
 
-  // Sending Email
-  const sendEmail = (e) => {
-    e.preventDefault();
 
-    emailjs
-      .sendForm(
-      'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY'
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          // Clear all input field values
-          form.current.reset();
-          // Success toast message
-          toast.success("Email send Successfully");
-        },
-        (error) => {
-          console.log(error.text);
-          toast.error(error.text);
+  const sendMessage = async (event) => {
+    event.preventDefault();
+    const formData={name:nameRef.current.value,
+          email:emailRef.current.value,
+          message:messageRef.current.value}
+    console.log(formData)
+    try{
+      const data = await axios.post(
+        " https://2sd2jql9bj.execute-api.us-east-1.amazonaws.com/dev/contact",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
+        console.log(data);
+      
+    }catch(err){
+      console.error(err)
+    }
+    
   };
+
 
   return (
     <section className="bg-dark_primary text-white" id="contact">
@@ -43,22 +50,24 @@ const Contact = () => {
         <br />
         <div className="flex gap-10 md:flex-row flex-col">
           <form
-            ref={form}
-            onSubmit={sendEmail}
+            
+            onSubmit={sendMessage}
             data-aos="fade-up"
             className="flex-1 flex flex-col gap-5"
           >
             {/* Input Name as same as email js templates values */}
             <input
               type="text"
-              name="from_name"
+              ref={nameRef}
+              name="name"
               placeholder="Name"
               required
               className="border border-slate-600 p-3 rounded"
             />
             <input
               type="email"
-              name="user_email"
+              ref={emailRef}
+              name="email"
               pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
               placeholder="Email Id"
               required
@@ -66,6 +75,7 @@ const Contact = () => {
             />
             <textarea
               name="message"
+              ref={messageRef}
               placeholder="Message"
               className="border border-slate-600 p-3 rounded h-44"
               required
